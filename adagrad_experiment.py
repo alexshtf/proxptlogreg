@@ -25,6 +25,8 @@ def run(dim, ds, epochs, attempts, lrs):
                         else:
                             a = XX
 
+                        opt.zero_grad()
+
                         score = torch.dot(a, x)
                         loss = torch.log1p(torch.exp(score))
                         loss.backward()
